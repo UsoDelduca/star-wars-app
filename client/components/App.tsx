@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
+import { Link, Outlet } from 'react-router-dom'
 import request from 'superagent'
-import { getSwapi } from '../apiClient.ts'
 
 function App() {
   const [data, setData] = useState()
 
   async function getSWData() {
-    const res = await request.get(getSwapi)
+    const res = await request.get('https://swapi.dev/api')
     setData(res.body)
   }
 
@@ -29,7 +29,6 @@ function App() {
             </li>
           )
         })}
-
         <div>
           <Outlet />
         </div>
