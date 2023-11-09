@@ -1,10 +1,8 @@
 import request from 'superagent'
 import { Welcome } from '../models/welcome.ts'
 
-const serverURL = '/api/v1'
+const apiURL = 'https://swapi.dev/api'
 
-// *** EXAMPLE ***
-export function getWelcome(): Promise<Welcome> {
-  return request.get(`${serverURL}/welcome`).then((response) => response.body)
+export function getSwapi(): Promise<Welcome> {
+  return request.get(`${apiURL}/welcome`).then((response) => response.body)
 }
-// ***   ***   ***
