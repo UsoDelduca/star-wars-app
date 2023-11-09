@@ -1,9 +1,9 @@
 {
-  "name": "consuming-external-apis",
+  "name": "star-wars-app",
   "type": "module",
   "version": "0.2.2",
   "description": "Consuming External APIs",
-  "repository": "https://github.com/dev-academy-challenges/consuming-external-apis.git",
+  "repository": "https://github.com/dev-academy-challenges/star-wars-app.git",
   "main": "server/index.ts",
   "author": "Dev Academy Aotearoa",
   "license": "ISC",
