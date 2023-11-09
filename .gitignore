@@ -65,3 +65,6 @@ bundle.*
 
 # Development databases
 dev.sqlite3
+
+# node_modules
+node_modules
