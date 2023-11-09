@@ -14,7 +14,6 @@ function App() {
     getSWData()
   }, [])
 
-  console.log(data)
   if (data) {
     const dataKeys = Object.keys(data)
 
