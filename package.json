@@ -26,8 +26,11 @@
     ]
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.8.1",
+    "@tanstack/react-query-devtools": "^5.8.1",
     "express": "^4.17.2",
     "npm-run-all": "^4.1.5",
+    "react-query": "^3.39.3",
     "react-router-dom": "^6.15.0",
     "superagent": "7.1.1"
   },
