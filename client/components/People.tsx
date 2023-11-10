@@ -19,7 +19,8 @@ export function People() {
     console.log(peopleResult)
     return (
       <>
-        <p>This is the People of SW</p>
+
+        <p className="bg-gray-200">This is the People of SW</p>
         {peopleResult.map(
           (p: { name: Key | string | null | undefined; next: string }) => {
             return (
@@ -36,6 +37,7 @@ export function People() {
         <div>
           <Link to={people.next}>Next page</Link>
         </div>
+
       </>
     )
   }
