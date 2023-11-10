@@ -19,25 +19,25 @@ export function People() {
     console.log(peopleResult)
     return (
       <>
-
-        <p className="bg-gray-200">This is the People of SW</p>
-        {peopleResult.map(
-          (p: { name: Key | string | null | undefined; next: string }) => {
-            return (
-              <>
-                <ul key={p.name}>
-                  <li>
-                    <Link to={p.name}>{p.name}</Link>
-                  </li>
-                </ul>
-              </>
-            )
-          }
-        )}
-        <div>
-          <Link to={people.next}>Next page</Link>
+        <div className="text-blue-600">
+          <p className="bg-gray-200">This is the People of SW</p>
+          {peopleResult.map(
+            (p: { name: Key | string | null | undefined; next: string }) => {
+              return (
+                <>
+                  <ul key={p.name}>
+                    <li>
+                      <Link to={p.name}>{p.name}</Link>
+                    </li>
+                  </ul>
+                </>
+              )
+            }
+          )}
+          <div>
+            <Link to={people.next}>Next page</Link>
+          </div>
         </div>
-
       </>
     )
   }
