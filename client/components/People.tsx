@@ -18,7 +18,7 @@ export function People() {
     const dataKeys = Object.keys(people)
     return (
       <>
-        <p>This is the People of SW</p>
+        <p className="bg-gray-200">This is the People of SW</p>
         {dataKeys.map((p) => {
           return (
             <ul key={p}>
