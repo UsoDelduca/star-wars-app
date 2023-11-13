@@ -8,10 +8,10 @@
   "author": "Dev Academy Aotearoa",
   "license": "ISC",
   "scripts": {
-    "dev": "run-p dev:client dev:server",
+    "dev": "run-p dev:client dev:server dev:css",
     "dev:client": "vite",
     "dev:server": "tsx watch server/index.ts",
-    "dev:css": "npx tailwindcss -i ./styles.css -o ./dist/output.css --watch",
+    "dev:css": "tailwindcss -i ./styles.css -o ./dist/output.css --watch",
     "start": "node dist/server.js",
     "build": "run-s build:client build:server",
     "build:client": "vite build",
