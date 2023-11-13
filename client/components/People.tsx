@@ -19,8 +19,8 @@ export function People() {
     console.log(peopleResult)
     return (
       <>
-        <div className="text-red-200">
-          <p className="bg-gray-200">This is the People of SW</p>
+        <div className="bg-gradient-to-r from-sky-500 to-indigo-500">
+          <p className="bg-red-400 ">This is the People of SW</p>
           {peopleResult.map(
             (p: { name: Key | string | null | undefined; next: string }) => {
               return (

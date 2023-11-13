@@ -7,8 +7,7 @@
     "jsx": "react-jsx" /* Specify what JSX code is generated. */,
 
     /* Modules */
-    "module": "ES2020" /* Specify what module code is generated. */,
-    "moduleResolution": "NodeNext",
+    "module": "commonjs" /* Specify what module code is generated. */,
     "allowImportingTsExtensions": true,
 
     /* Interop Constraints */
@@ -21,5 +20,6 @@
     "noEmit": true,
     "allowJs": true,
 
-  }
+  },
+  "include": ["server/**/*", "client/**/*"]
 }
