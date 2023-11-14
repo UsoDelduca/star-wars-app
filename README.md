@@ -1,4 +1,4 @@
-# External APIs - Choose your own adventure!
+# External APIs!
 
 This exercise is an attempt to create a Client-side rendered app fetching an external API  
 
