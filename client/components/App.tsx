@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import request from 'superagent'
+import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 function App() {
   const [data, setData] = useState()
@@ -19,15 +20,28 @@ function App() {
 
     return (
       <>
-        <h1>This is SW Wiki!</h1>
+        <div className="flex flex-col">
+          <h1 className="text-2xl">This is SW Wiki!</h1>
 
-        {dataKeys.map((db) => {
-          return (
-            <li key={db}>
-              <Link to={db}>{db.toUpperCase()}</Link>
-            </li>
-          )
-        })}
+          <div className="flex flex-row">
+            {dataKeys.map((db) => {
+              return (
+                <>
+                  <div className="flex flex-row">
+                    <li key={db} className="list-none">
+                      <Link
+                        to={db}
+                        className="bg-white inline-block border-1 border-t border-r rounded-t py-2 px-4 text-blue-600 hover:text-blue-900 font-semibold"
+                      >
+                        {db.toUpperCase()}
+                      </Link>
+                    </li>
+                  </div>
+                </>
+              )
+            })}
+          </div>
+        </div>
         <div>
           <Outlet />
         </div>
@@ -37,8 +51,10 @@ function App() {
   if (!data) {
     return (
       <>
-        <h1>This is SW Wiki!</h1>
-        <p>Loading data...</p>
+        <div className="flex flex-col mt-2">
+          <h1 className="text-2xl">This is SW Wiki!</h1>
+          <LoadingSpinner />
+        </div>
       </>
     )
   }

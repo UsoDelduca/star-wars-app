@@ -1,3 +1,3 @@
 export function Planets() {
-  return <p>This are the Plantes of SW</p>
+  return <p className="bg-white pl-1 ">This are the Planets of SW</p>
 }
