@@ -19,6 +19,12 @@ export function Planets() {
   if (planets) {
     const planetsResult = planets.results
     console.log(planetsResult)
+
+    // const planetId = planetsResult.map((item) => {
+    //   return item.url.slice(30).split('/')[0]
+    // })
+    // console.log('URL: ', planetId)
+
     return (
       <>
         <div className="bg-gradient-to-r from-sky-500 to-indigo-500">
@@ -28,15 +34,17 @@ export function Planets() {
             (
               p: {
                 name: Key | string | null | undefined
+                url: string
 
                 next: string
               },
               idx: number
             ) => {
+              const planetId = p.url.slice(30).split('/')[0]
               return (
                 <ul key={idx} className="pl-1">
                   <li>
-                    <Link to={`${idx + 1}`}>{p.name}</Link>
+                    <Link to={planetId}>{p.name}</Link>
                   </li>
                 </ul>
               )
