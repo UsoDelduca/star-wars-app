@@ -46,7 +46,7 @@ function App() {
   if (!data) {
     return (
       <>
-        <h1>This is SW Wiki!</h1>
+        <h1 className="text-2xl">This is SW Wiki!</h1>
         <p>Loading data...</p>
       </>
     )
