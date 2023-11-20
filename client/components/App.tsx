@@ -19,13 +19,22 @@ function App() {
 
     return (
       <>
-        <h1>This is SW Wiki!</h1>
+        <h1 className="text-2xl">This is SW Wiki!</h1>
 
         {dataKeys.map((db) => {
           return (
-            <li key={db}>
-              <Link to={db}>{db.toUpperCase()}</Link>
-            </li>
+            <>
+              <ul className="flex">
+                <li key={db} className="list-none">
+                  <Link
+                    to={db}
+                    className="bg-white inline-block border-1 border-t border-r rounded-t py-2 px-4 text-blue-600 hover:text-blue-900 font-semibold"
+                  >
+                    {db.toUpperCase()}
+                  </Link>
+                </li>
+              </ul>
+            </>
           )
         })}
         <div>
