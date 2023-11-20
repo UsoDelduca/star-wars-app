@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import request from 'superagent'
+import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 function App() {
   const [data, setData] = useState()
@@ -47,7 +48,7 @@ function App() {
     return (
       <>
         <h1 className="text-2xl">This is SW Wiki!</h1>
-        <p>Loading data...</p>
+        <LoadingSpinner />
       </>
     )
   }
