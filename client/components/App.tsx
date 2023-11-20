@@ -21,7 +21,9 @@ function App() {
     return (
       <>
         <div className="flex flex-col">
-          <h1 className="text-2xl">This is SW Wiki!</h1>
+          <h1 className="text-2xl w-fit bg-white p-1 rounded">
+            This is SW Wiki!
+          </h1>
 
           <div className="flex flex-row">
             {dataKeys.map((db) => {

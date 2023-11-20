@@ -62,6 +62,7 @@ export function People() {
               >
                 Next
               </button>
+              //add number of pages based on the amount of content //
             )}
           </div>
         </div>
