@@ -22,7 +22,7 @@ export function People() {
     return (
       <>
         <div className="bg-gradient-to-r from-sky-500 to-indigo-500">
-          <p className="bg-red-400 ">This is the People of SW</p>
+          <p className="bg-white pl-1 ">This is the People of SW</p>
 
           {peopleResult.map(
             (
@@ -34,7 +34,7 @@ export function People() {
               idx: number
             ) => {
               return (
-                <ul key={idx}>
+                <ul key={idx} className="pl-1">
                   <li>
                     <Link to={`${idx + 1}`}>{p.name}</Link>
                   </li>
@@ -45,12 +45,20 @@ export function People() {
 
           <div>
             {people.previous && (
-              <button onClick={() => getPeople(people.previous)}>
+              <button
+                onClick={() => getPeople(people.previous)}
+                className="bg-white mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+              >
                 Previous
               </button>
             )}
             {people.next && (
-              <button onClick={() => getPeople(people.next)}>Next</button>
+              <button
+                onClick={() => getPeople(people.next)}
+                className="bg-white text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+              >
+                Next
+              </button>
             )}
           </div>
         </div>
