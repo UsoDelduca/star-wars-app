@@ -22,7 +22,7 @@ export function People() {
     return (
       <>
         <div className="bg-gradient-to-r from-sky-500 to-indigo-500">
-          <p className="bg-white pl-1 ">This is the People of SW</p>
+          <p className="bg-white pl-1 ">This are the People of SW</p>
 
           {peopleResult.map(
             (
