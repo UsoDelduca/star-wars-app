@@ -68,8 +68,10 @@ export function People() {
   if (!people) {
     return (
       <>
-        <p>This is the People of SW</p>
-        <LoadingSpinner />
+        <p className="bg-white pl-1 ">This is the People of SW</p>
+        <div className="m-2">
+          <LoadingSpinner />
+        </div>
       </>
     )
   }
