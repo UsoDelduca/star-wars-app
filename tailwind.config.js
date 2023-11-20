@@ -4,5 +4,8 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-dotted-background'),
+    require('tailwindcss-patterns'),
+  ],
 }
