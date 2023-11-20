@@ -19,6 +19,7 @@ export function People() {
   if (people) {
     const peopleResult = people.results
     console.log(peopleResult)
+
     return (
       <>
         <div className="bg-gradient-to-r from-sky-500 to-indigo-500">
@@ -28,15 +29,17 @@ export function People() {
             (
               p: {
                 name: Key | string | null | undefined
+                url: string
 
                 next: string
               },
               idx: number
             ) => {
+              const peopleId = p.url.slice(29).split('/')[0]
               return (
                 <ul key={idx} className="pl-1">
                   <li>
-                    <Link to={`${idx + 1}`}>{p.name}</Link>
+                    <Link to={peopleId}>{p.name}</Link>
                   </li>
                 </ul>
               )
