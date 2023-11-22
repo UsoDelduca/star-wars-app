@@ -8,12 +8,12 @@ const swURL = 'https://swapi.dev/api/films/'
 export function Films() {
   const [films, setFilms] = useState<any>()
 
-  async function getPeople(swURL: string) {
+  async function getFilms(swURL: string) {
     const res = await request.get(swURL)
     setFilms(res.body)
   }
   useEffect(() => {
-    getPeople(swURL)
+    getFilms(swURL)
   }, [])
 
   if (films) {
@@ -52,7 +52,7 @@ export function Films() {
           <div>
             {films.previous && (
               <button
-                onClick={() => getPeople(films.previous)}
+                onClick={() => getFilms(films.previous)}
                 className="bg-white mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
               >
                 Previous
@@ -60,7 +60,7 @@ export function Films() {
             )}
             {films.next && (
               <button
-                onClick={() => getPeople(films.next)}
+                onClick={() => getFilms(films.next)}
                 className="bg-white text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
               >
                 Next
