@@ -22,51 +22,45 @@ export function People() {
 
     return (
       <>
-        <div className="bg-white opacity-80">
-          <h2 className="bg-white pl-1 text-lg p-2">
-            This are the People of SW
-          </h2>
+        {peopleResult.map(
+          (
+            p: {
+              name: Key | string | null | undefined
+              url: string
 
-          {peopleResult.map(
-            (
-              p: {
-                name: Key | string | null | undefined
-                url: string
+              next: string
+            },
+            idx: number
+          ) => {
+            const peopleId = p.url.slice(29).split('/')[0]
+            return (
+              <ul key={idx} className="pl-1">
+                <li>
+                  <Link to={peopleId}>{p.name}</Link>
+                </li>
+              </ul>
+            )
+          }
+        )}
 
-                next: string
-              },
-              idx: number
-            ) => {
-              const peopleId = p.url.slice(29).split('/')[0]
-              return (
-                <ul key={idx} className="pl-1">
-                  <li>
-                    <Link to={peopleId}>{p.name}</Link>
-                  </li>
-                </ul>
-              )
-            }
+        <div>
+          {people.previous && (
+            <button
+              onClick={() => getPeople(people.previous)}
+              className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+            >
+              Previous
+            </button>
           )}
-
-          <div>
-            {people.previous && (
-              <button
-                onClick={() => getPeople(people.previous)}
-                className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
-              >
-                Previous
-              </button>
-            )}
-            {people.next && (
-              <button
-                onClick={() => getPeople(people.next)}
-                className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
-              >
-                Next
-              </button>
-              //add number of pages based on the amount of content //
-            )}
-          </div>
+          {people.next && (
+            <button
+              onClick={() => getPeople(people.next)}
+              className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+            >
+              Next
+            </button>
+            //add number of pages based on the amount of content //
+          )}
         </div>
       </>
     )

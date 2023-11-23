@@ -27,50 +27,44 @@ export function Planets() {
 
     return (
       <>
-        <div className="bg-white opacity-80">
-          <h2 className="bg-white pl-1 text-lg p-2">
-            This are the planets of SW
-          </h2>
+        {planetsResult.map(
+          (
+            p: {
+              name: Key | string | null | undefined
+              url: string
 
-          {planetsResult.map(
-            (
-              p: {
-                name: Key | string | null | undefined
-                url: string
+              next: string
+            },
+            idx: number
+          ) => {
+            const planetId = p.url.slice(30).split('/')[0]
+            return (
+              <ul key={idx} className="pl-1">
+                <li>
+                  <Link to={planetId}>{p.name}</Link>
+                </li>
+              </ul>
+            )
+          }
+        )}
 
-                next: string
-              },
-              idx: number
-            ) => {
-              const planetId = p.url.slice(30).split('/')[0]
-              return (
-                <ul key={idx} className="pl-1">
-                  <li>
-                    <Link to={planetId}>{p.name}</Link>
-                  </li>
-                </ul>
-              )
-            }
+        <div>
+          {planets.previous && (
+            <button
+              onClick={() => getplanets(planets.previous)}
+              className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+            >
+              Previous
+            </button>
           )}
-
-          <div>
-            {planets.previous && (
-              <button
-                onClick={() => getplanets(planets.previous)}
-                className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
-              >
-                Previous
-              </button>
-            )}
-            {planets.next && (
-              <button
-                onClick={() => getplanets(planets.next)}
-                className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
-              >
-                Next
-              </button>
-            )}
-          </div>
+          {planets.next && (
+            <button
+              onClick={() => getplanets(planets.next)}
+              className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+            >
+              Next
+            </button>
+          )}
         </div>
       </>
     )

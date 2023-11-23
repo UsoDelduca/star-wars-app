@@ -22,56 +22,50 @@ export function Species() {
 
     return (
       <>
-        <div className="bg-white opacity-80">
-          <h2 className="bg-white pl-1 text-lg p-2">
-            This are the Species of SW
-          </h2>
+        {speciesResult.map(
+          (
+            p: {
+              name: Key | string | null | undefined
+              url: string
 
-          {speciesResult.map(
-            (
-              p: {
-                name: Key | string | null | undefined
-                url: string
-
-                next: string
-              },
-              idx: number
-            ) => {
-              const speciesId = p.url.slice(30).split('/')[0]
-              {
-                console.log('ID: ', speciesId)
-              }
-              return (
-                <ul key={idx} className="pl-1">
-                  <li>
-                    <Link to={speciesId}>
-                      {speciesId} - {p.name}
-                    </Link>
-                  </li>
-                </ul>
-              )
+              next: string
+            },
+            idx: number
+          ) => {
+            const speciesId = p.url.slice(30).split('/')[0]
+            {
+              console.log('ID: ', speciesId)
             }
-          )}
+            return (
+              <ul key={idx} className="pl-1">
+                <li>
+                  <Link to={speciesId}>
+                    {speciesId} - {p.name}
+                  </Link>
+                </li>
+              </ul>
+            )
+          }
+        )}
 
-          <div>
-            {species.previous && (
-              <button
-                onClick={() => getSpecies(species.previous)}
-                className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
-              >
-                Previous
-              </button>
-            )}
-            {species.next && (
-              <button
-                onClick={() => getSpecies(species.next)}
-                className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
-              >
-                Next
-              </button>
-              //add number of pages based on the amount of content //
-            )}
-          </div>
+        <div>
+          {species.previous && (
+            <button
+              onClick={() => getSpecies(species.previous)}
+              className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+            >
+              Previous
+            </button>
+          )}
+          {species.next && (
+            <button
+              onClick={() => getSpecies(species.next)}
+              className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+            >
+              Next
+            </button>
+            //add number of pages based on the amount of content //
+          )}
         </div>
       </>
     )

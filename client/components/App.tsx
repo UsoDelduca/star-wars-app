@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import request from 'superagent'
 import LoadingSpinner from '../UI/UX/LoadingSpinner'
+import { Header } from './Header'
 
 function App() {
   const [data, setData] = useState()
@@ -44,7 +45,8 @@ function App() {
             })}
           </div>
         </div>
-        <div>
+        <div className="bg-white opacity-80">
+          <Header categories={dataKeys} />
           <Outlet />
         </div>
       </>

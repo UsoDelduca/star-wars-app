@@ -1,7 +1,7 @@
 function LoadingSpinner() {
   return (
     <>
-      <div>
+      <div className="bg-white opacity-80 pl-1 w-fit">
         <svg
           aria-hidden="true"
           className="w-8 h-8 text-gray-200 p-1 animate-spin dark:text-gray-600 fill-blue-600"
