@@ -53,10 +53,7 @@ function App() {
   if (!data) {
     return (
       <>
-        <div className="flex flex-col mt-2">
-          <h1 className="text-2xl">This is SW Wiki!</h1>
-          <LoadingSpinner />
-        </div>
+        <LoadingSpinner />
       </>
     )
   }

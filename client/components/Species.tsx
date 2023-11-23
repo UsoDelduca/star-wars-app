@@ -23,7 +23,9 @@ export function Species() {
     return (
       <>
         <div className="bg-white opacity-80">
-          <p className="bg-white pl-1 ">This are the Species of SW</p>
+          <h2 className="bg-white pl-1 text-lg p-2">
+            This are the Species of SW
+          </h2>
 
           {speciesResult.map(
             (
@@ -77,10 +79,9 @@ export function Species() {
   if (!species) {
     return (
       <>
-        <p className="bg-white pl-1 ">This are the Species of SW</p>
-        <div className="m-2">
+        <p className="bg-white opacity-80 pl-1 w-fit">
           <LoadingSpinner />
-        </div>
+        </p>
       </>
     )
   }

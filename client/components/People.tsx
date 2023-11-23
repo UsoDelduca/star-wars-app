@@ -23,7 +23,9 @@ export function People() {
     return (
       <>
         <div className="bg-white opacity-80">
-          <p className="bg-white pl-1 ">This are the People of SW</p>
+          <h2 className="bg-white pl-1 text-lg p-2">
+            This are the People of SW
+          </h2>
 
           {peopleResult.map(
             (
@@ -72,10 +74,9 @@ export function People() {
   if (!people) {
     return (
       <>
-        <p className="bg-white pl-1 ">This is the People of SW</p>
-        <div className="m-2">
+        <p className="bg-white opacity-80 pl-1 w-fit">
           <LoadingSpinner />
-        </div>
+        </p>
       </>
     )
   }

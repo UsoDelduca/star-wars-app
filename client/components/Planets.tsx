@@ -28,7 +28,9 @@ export function Planets() {
     return (
       <>
         <div className="bg-white opacity-80">
-          <p className="bg-white pl-1 ">This are the planets of SW</p>
+          <h2 className="bg-white pl-1 text-lg p-2">
+            This are the planets of SW
+          </h2>
 
           {planetsResult.map(
             (
@@ -76,10 +78,9 @@ export function Planets() {
   if (!planets) {
     return (
       <>
-        <p className="bg-white pl-1 ">This are the planets of SW</p>
-        <div className="m-2">
+        <p className="bg-white pl-1 opacity-80 pl-1 w-fit">
           <LoadingSpinner />
-        </div>
+        </p>
       </>
     )
   }

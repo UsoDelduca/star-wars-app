@@ -23,7 +23,9 @@ export function Films() {
     return (
       <>
         <div className="bg-white opacity-80">
-          <p className="bg-white pl-1 ">This are the Films of SW</p>
+          <h2 className="bg-white pl-1 text-lg p-2">
+            This are the Films of SW
+          </h2>
 
           {filmsResult.map(
             (
@@ -75,10 +77,9 @@ export function Films() {
   if (!films) {
     return (
       <>
-        <p className="bg-white pl-1 ">This are the Films of SW</p>
-        <div className="m-2">
+        <p className="bg-white opacity-80 pl-1 w-fit ">
           <LoadingSpinner />
-        </div>
+        </p>
       </>
     )
   }
