@@ -22,52 +22,48 @@ export function Starships() {
 
     return (
       <>
-        <div className="bg-gradient-to-r from-sky-500 to-indigo-500">
-          <p className="bg-white pl-1 ">This are the Starships of SW</p>
+        {starshipsResult.map(
+          (
+            p: {
+              name: Key | string | null | undefined
+              url: string
 
-          {starshipsResult.map(
-            (
-              p: {
-                name: Key | string | null | undefined
-                url: string
-
-                next: string
-              },
-              idx: number
-            ) => {
-              const starshipsId = p.url.slice(32).split('/')[0]
-              {
-                console.log('ID: ', starshipsId)
-              }
-              return (
-                <ul key={idx} className="pl-1">
-                  <li>
-                    <Link to={starshipsId}>{p.name}</Link>
-                  </li>
-                </ul>
-              )
+              next: string
+            },
+            idx: number
+          ) => {
+            const starshipsId = p.url.slice(32).split('/')[0]
+            {
+              console.log('ID: ', starshipsId)
             }
-          )}
+            return (
+              <ul key={idx} className="pl-1">
+                <li>
+                  <Link to={starshipsId}>{p.name}</Link>
+                </li>
+              </ul>
+            )
+          }
+        )}
 
-          <div>
-            {starships.previous && (
-              <button
-                onClick={() => getStarships(starships.previous)}
-                className="bg-white mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
-              >
-                Previous
-              </button>
-            )}
-            {starships.next && (
-              <button
-                onClick={() => getStarships(starships.next)}
-                className="bg-white text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
-              >
-                Next
-              </button>
-              //add number of pages based on the amount of content //
-            )}
-          </div>
+        <div>
+          {starships.previous && (
+            <button
+              onClick={() => getStarships(starships.previous)}
+              className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+            >
+              Previous
+            </button>
+          )}
+          {starships.next && (
+            <button
+              onClick={() => getStarships(starships.next)}
+              className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+            >
+              Next
+            </button>
+            //add number of pages based on the amount of content //
+          )}
         </div>
       </>
     )
@@ -75,10 +71,9 @@ export function Starships() {
   if (!starships) {
     return (
       <>
-        <p className="bg-white pl-1 ">This are the Starships of SW</p>
-        <div className="m-2">
+        <p className="bg-white opacity-80 pl-1 w-fit">
           <LoadingSpinner />
-        </div>
+        </p>
       </>
     )
   }

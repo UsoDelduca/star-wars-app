@@ -2,7 +2,11 @@
 module.exports = {
   content: ['./*.html', './client/**/*.[tj]sx'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        '8bit': ['Montserrat', 'sans-serif'],
+      },
+    },
   },
   plugins: [
     require('tailwindcss-dotted-background'),
