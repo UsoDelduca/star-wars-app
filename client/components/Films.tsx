@@ -22,7 +22,7 @@ export function Films() {
 
     return (
       <>
-        <div className="bg-gradient-to-r from-sky-500 to-indigo-500">
+        <div className="bg-white opacity-80">
           <p className="bg-white pl-1 ">This are the Films of SW</p>
 
           {filmsResult.map(
@@ -53,7 +53,7 @@ export function Films() {
             {films.previous && (
               <button
                 onClick={() => getFilms(films.previous)}
-                className="bg-white mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+                className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
               >
                 Previous
               </button>
@@ -61,7 +61,7 @@ export function Films() {
             {films.next && (
               <button
                 onClick={() => getFilms(films.next)}
-                className="bg-white text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+                className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
               >
                 Next
               </button>

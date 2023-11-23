@@ -22,7 +22,7 @@ export function Species() {
 
     return (
       <>
-        <div className="bg-gradient-to-r from-sky-500 to-indigo-500">
+        <div className="bg-white opacity-80">
           <p className="bg-white pl-1 ">This are the Species of SW</p>
 
           {speciesResult.map(
@@ -55,7 +55,7 @@ export function Species() {
             {species.previous && (
               <button
                 onClick={() => getSpecies(species.previous)}
-                className="bg-white mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+                className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
               >
                 Previous
               </button>
@@ -63,7 +63,7 @@ export function Species() {
             {species.next && (
               <button
                 onClick={() => getSpecies(species.next)}
-                className="bg-white text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+                className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
               >
                 Next
               </button>

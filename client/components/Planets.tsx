@@ -27,7 +27,7 @@ export function Planets() {
 
     return (
       <>
-        <div className="bg-gradient-to-r from-sky-500 to-indigo-500">
+        <div className="bg-white opacity-80">
           <p className="bg-white pl-1 ">This are the planets of SW</p>
 
           {planetsResult.map(
@@ -55,7 +55,7 @@ export function Planets() {
             {planets.previous && (
               <button
                 onClick={() => getplanets(planets.previous)}
-                className="bg-white mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+                className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
               >
                 Previous
               </button>
@@ -63,7 +63,7 @@ export function Planets() {
             {planets.next && (
               <button
                 onClick={() => getplanets(planets.next)}
-                className="bg-white text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+                className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
               >
                 Next
               </button>

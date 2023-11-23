@@ -21,7 +21,7 @@ function App() {
     return (
       <>
         <div className="flex flex-col">
-          <h1 className="text-2xl w-fit bg-white p-1 rounded">
+          <h1 className="text-2xl w-fit bg-white opacity-80 p-1 rounded">
             This is SW Wiki!
           </h1>
 
@@ -33,7 +33,7 @@ function App() {
                     <li key={db} className="list-none">
                       <Link
                         to={db}
-                        className="bg-white inline-block border-1 border-t border-r rounded-t py-2 px-4 text-blue-600 hover:text-blue-900 font-semibold"
+                        className="bg-white opacity-80 mr-0.5 inline-block border-1 border-t border-r rounded-t py-2 px-4 text-blue-600 hover:text-blue-900 font-semibold"
                       >
                         {db.toUpperCase()}
                       </Link>

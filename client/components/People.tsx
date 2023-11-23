@@ -22,7 +22,7 @@ export function People() {
 
     return (
       <>
-        <div className="bg-gradient-to-r from-sky-500 to-indigo-500">
+        <div className="bg-white opacity-80">
           <p className="bg-white pl-1 ">This are the People of SW</p>
 
           {peopleResult.map(
@@ -50,7 +50,7 @@ export function People() {
             {people.previous && (
               <button
                 onClick={() => getPeople(people.previous)}
-                className="bg-white mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+                className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
               >
                 Previous
               </button>
@@ -58,7 +58,7 @@ export function People() {
             {people.next && (
               <button
                 onClick={() => getPeople(people.next)}
-                className="bg-white text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+                className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
               >
                 Next
               </button>

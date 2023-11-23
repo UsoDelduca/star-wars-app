@@ -22,7 +22,7 @@ export function Starships() {
 
     return (
       <>
-        <div className="bg-gradient-to-r from-sky-500 to-indigo-500">
+        <div className="bg-white opacity-80">
           <p className="bg-white pl-1 ">This are the Starships of SW</p>
 
           {starshipsResult.map(
@@ -53,7 +53,7 @@ export function Starships() {
             {starships.previous && (
               <button
                 onClick={() => getStarships(starships.previous)}
-                className="bg-white mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+                className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
               >
                 Previous
               </button>
@@ -61,7 +61,7 @@ export function Starships() {
             {starships.next && (
               <button
                 onClick={() => getStarships(starships.next)}
-                className="bg-white text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+                className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
               >
                 Next
               </button>
