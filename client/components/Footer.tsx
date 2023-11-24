@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <div className="bg-white opacity-80 pl-1 pr-1 flex justify-end">
+    <div className="text-primary-yellow pl-1 pr-1 flex justify-end max-w-screen-md">
       ©Rodolfo Delduca - 2023
       <a href="https://github.com/UsoDelduca" className="pr-1 pl-1">
         GitHub

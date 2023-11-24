@@ -5,9 +5,9 @@ import { Footer } from './Footer'
 function App() {
   return (
     <>
-      <div className="bg-black bg-dotted-white bg-dotted-spacing-2 p-5 font-8bit">
+      <div className="bg-[#0c0a09] p-5 font-8bit">
         <Header />
-        <div className="bg-white opacity-80">
+        <div className="bg-[#f8fafc] opacity-80 max-w-screen-md rounded border-2 border-t-primary-yellow border-b-primary-yellow">
           <Outlet />
         </div>
         <Footer />

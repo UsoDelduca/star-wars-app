@@ -37,7 +37,7 @@ export function Films() {
               console.log('ID: ', filmsId)
             }
             return (
-              <ul key={idx} className="pl-1">
+              <ul key={idx} className="pl-1 hover:text-primary-yellow">
                 <li>
                   <Link to={filmsId}>{p.title}</Link>
                 </li>
@@ -50,7 +50,7 @@ export function Films() {
           {films.previous && (
             <button
               onClick={() => getFilms(films.previous)}
-              className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+              className="bg-[#e5e7eb] text-[#2563eb] hover:text-[#1e3a8a] font-semibold ml-1 mb-1 py-2 px-4 rounded"
             >
               Previous
             </button>
@@ -58,7 +58,7 @@ export function Films() {
           {films.next && (
             <button
               onClick={() => getFilms(films.next)}
-              className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+              className="bg-[#e5e7eb] text-[#2563eb] hover:text-[#1e3a8a] font-semibold ml-1 mb-1 py-2 px-4 rounded"
             >
               Next
             </button>

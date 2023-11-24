@@ -34,7 +34,7 @@ export function People() {
           ) => {
             const peopleId = p.url.slice(29).split('/')[0]
             return (
-              <ul key={idx} className="pl-1">
+              <ul key={idx} className="pl-1 hover:text-primary-yellow">
                 <li>
                   <Link to={peopleId}>{p.name}</Link>
                 </li>
@@ -47,7 +47,7 @@ export function People() {
           {people.previous && (
             <button
               onClick={() => getPeople(people.previous)}
-              className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+              className="bg-[#e5e7eb] text-[#2563eb] hover:text-[#1e3a8a] font-semibold ml-1 mb-1 py-2 px-4 rounded"
             >
               Previous
             </button>
@@ -55,7 +55,7 @@ export function People() {
           {people.next && (
             <button
               onClick={() => getPeople(people.next)}
-              className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+              className="bg-[#e5e7eb] text-[#2563eb] hover:text-[#1e3a8a] font-semibold ml-1 mb-1 py-2 px-4 rounded"
             >
               Next
             </button>

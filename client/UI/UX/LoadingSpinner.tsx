@@ -1,10 +1,10 @@
 function LoadingSpinner() {
   return (
     <>
-      <div className="bg-white opacity-80 pl-1 w-fit">
+      <div className=" pl-1 w-fit">
         <svg
           aria-hidden="true"
-          className="w-8 h-8 text-gray-200 p-1 animate-spin dark:text-gray-600 fill-blue-600"
+          className="w-8 h-8 text-[#e5e7eb] p-1 animate-spin dark:text-[#4b5563] fill-[#2563eb]"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

@@ -39,7 +39,7 @@ export function Planets() {
           ) => {
             const planetId = p.url.slice(30).split('/')[0]
             return (
-              <ul key={idx} className="pl-1">
+              <ul key={idx} className="pl-1 hover:text-primary-yellow">
                 <li>
                   <Link to={planetId}>{p.name}</Link>
                 </li>
@@ -52,7 +52,7 @@ export function Planets() {
           {planets.previous && (
             <button
               onClick={() => getplanets(planets.previous)}
-              className="bg-gray-200 mr-1 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+              className="bg-[#e5e7eb] text-[#2563eb] hover:text-[#1e3a8a] font-semibold ml-1 mb-1 py-2 px-4 rounded"
             >
               Previous
             </button>
@@ -60,7 +60,7 @@ export function Planets() {
           {planets.next && (
             <button
               onClick={() => getplanets(planets.next)}
-              className="bg-gray-200 text-blue-600 hover:text-blue-900 font-semibold py-2 px-4 rounded"
+              className="bg-[#e5e7eb] text-[#2563eb] hover:text-[#1e3a8a] font-semibold ml-1 mb-1 py-2 px-4 rounded"
             >
               Next
             </button>
