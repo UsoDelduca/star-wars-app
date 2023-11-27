@@ -22,6 +22,10 @@ export function Vehicles() {
 
     return (
       <>
+        <p className="pl-1 pb-1">
+          {' '}
+          The API list may have been altered, so the ID looks a little odd..{' '}
+        </p>
         {vehiclesResult.map(
           (
             p: {
@@ -39,7 +43,9 @@ export function Vehicles() {
             return (
               <ul key={idx} className="pl-1 hover:underline">
                 <li>
-                  <Link to={vehiclesId}>{p.name}</Link>
+                  <Link to={vehiclesId}>
+                    {vehiclesId} - {p.name}
+                  </Link>
                 </li>
               </ul>
             )

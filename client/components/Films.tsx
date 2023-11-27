@@ -27,19 +27,22 @@ export function Films() {
             p: {
               title: Key | string | null | undefined
               url: string
-
+              release_date: string
               next: string
             },
             idx: number
           ) => {
             const filmsId = p.url.slice(28).split('/')[0]
+            const releasedYear = p.release_date.substring(0, 4)
             {
-              console.log('ID: ', filmsId)
+              console.log('YEAR: ', releasedYear)
             }
             return (
               <ul key={idx} className="pl-1  hover:underline">
                 <li>
-                  <Link to={filmsId}>{p.title}</Link>
+                  <Link to={filmsId}>
+                    {releasedYear} - {p.title}
+                  </Link>
                 </li>
               </ul>
             )

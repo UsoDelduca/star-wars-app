@@ -36,7 +36,9 @@ export function People() {
             return (
               <ul key={idx} className="pl-1 hover:underline">
                 <li>
-                  <Link to={peopleId}>{p.name}</Link>
+                  <Link to={peopleId}>
+                    {peopleId} - {p.name}
+                  </Link>
                 </li>
               </ul>
             )
