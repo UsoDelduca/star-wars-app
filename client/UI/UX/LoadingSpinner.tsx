@@ -21,7 +21,7 @@ function LoadingSpinner() {
         <img
           src="../../utils/images/red_lightsaber.png"
           alt="spinning-lightsaber"
-          className="animate-spin w-24 p-3"
+          className="animate-spin w-1/4 p-3"
         />
         Loading data...
       </div>
