@@ -1,7 +1,7 @@
 function LoadingSpinner() {
   return (
     <>
-      <div className=" pl-1 w-fit">
+      <div className=" pl-1 ">
         {/* <svg
           aria-hidden="true"
           className="w-8 h-8 text-[#e5e7eb] p-1 animate-spin dark:text-[#4b5563] fill-[#2563eb]"
@@ -21,7 +21,7 @@ function LoadingSpinner() {
         <img
           src="../../utils/images/red_lightsaber.png"
           alt="spinning-lightsaber"
-          className="animate-spin"
+          className="animate-spin w-24 p-3"
         />
         Loading data...
       </div>
