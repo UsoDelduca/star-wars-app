@@ -37,7 +37,7 @@ export function Starships() {
               console.log('ID: ', starshipsId)
             }
             return (
-              <ul key={idx} className="pl-1 hover:text-primary-yellow">
+              <ul key={idx} className="pl-1 hover:underline">
                 <li>
                   <Link to={starshipsId}>{p.name}</Link>
                 </li>

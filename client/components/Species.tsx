@@ -37,7 +37,7 @@ export function Species() {
               console.log('ID: ', speciesId)
             }
             return (
-              <ul key={idx} className="pl-1 hover:text-primary-yellow">
+              <ul key={idx} className="pl-1 hover:underline">
                 <li>
                   <Link to={speciesId}>
                     {speciesId} - {p.name}

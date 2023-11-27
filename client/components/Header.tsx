@@ -19,9 +19,10 @@ export function Header() {
     const dataKeys = Object.keys(data)
     return (
       <div className="flex flex-col">
-        <h1 className="text-2xl w-fit bg-white text-primary-yellow p-1 rounded">
-          <Link to={'/'}> This is SW Wiki!</Link>
+        <h1 className="text-2xl w-fit text-primary-yellow p-1 rounded">
+          <Link to={'/'}> This is the SW File System!</Link>
         </h1>
+        <p className="pb-1 pl-1">Choose a category to view more information:</p>
 
         <div className="flex flex-row">
           {dataKeys.map((category) => {
@@ -31,7 +32,7 @@ export function Header() {
                   <li key={category} className="list-none">
                     <Link
                       to={category}
-                      className="mr-0.5 inline-block border-1 border-t border-r rounded-t py-2 px-4 text-primary-yellow hover:text-[white] font-semibold"
+                      className="mr-0.5 inline-block border-1 border-t border-r rounded-t py-2 px-4 hover:text-[white]"
                     >
                       {category.toUpperCase()}
                     </Link>

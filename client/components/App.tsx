@@ -5,11 +5,17 @@ import { Footer } from './Footer'
 function App() {
   return (
     <>
-      <div className="bg-[#0c0a09] p-5 font-8bit">
+      <div
+        className="text-primary-yellow font-8bit w-full
+    h-screen
+    bg-gradient-to-r
+    from-[#0c0a09]
+    via-[#dbd7fb]
+    to-[black]
+    background-animate"
+      >
         <Header />
-        <div className="bg-[#f8fafc] opacity-80 max-w-screen-md rounded border-2 border-t-primary-yellow border-b-primary-yellow">
-          <Outlet />
-        </div>
+        <Outlet />
         <Footer />
       </div>
     </>
