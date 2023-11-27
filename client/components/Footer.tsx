@@ -4,7 +4,7 @@ export function Footer() {
       ©Rodolfo Delduca - 2023
       <a
         href="https://github.com/UsoDelduca"
-        className="pr-1 pl-1  hover:underline"
+        className="pr-1 pl-3  hover:underline"
       >
         GitHub
       </a>

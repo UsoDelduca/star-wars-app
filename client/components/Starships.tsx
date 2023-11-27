@@ -22,6 +22,10 @@ export function Starships() {
 
     return (
       <>
+        <p className="pl-1 pb-1">
+          {' '}
+          The API list may have been altered, so the ID looks a little odd..{' '}
+        </p>
         {starshipsResult.map(
           (
             p: {
@@ -39,7 +43,9 @@ export function Starships() {
             return (
               <ul key={idx} className="pl-1 hover:underline">
                 <li>
-                  <Link to={starshipsId}>{p.name}</Link>
+                  <Link to={starshipsId}>
+                    {starshipsId} - {p.name}
+                  </Link>
                 </li>
               </ul>
             )

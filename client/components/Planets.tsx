@@ -41,7 +41,9 @@ export function Planets() {
             return (
               <ul key={idx} className="pl-1 hover:underline">
                 <li>
-                  <Link to={planetId}>{p.name}</Link>
+                  <Link to={planetId}>
+                    {planetId} - {p.name}
+                  </Link>
                 </li>
               </ul>
             )
