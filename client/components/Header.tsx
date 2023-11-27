@@ -22,7 +22,9 @@ export function Header() {
         <h1 className="text-2xl w-fit text-primary-yellow p-1 rounded">
           <Link to={'/'}> This is the SW File System!</Link>
         </h1>
-        <p className="pb-1 pl-1">Choose a category to view more information:</p>
+        <p className="pb-1 pl-1">
+          🛸 Choose a category to view more information 🛸
+        </p>
 
         <div className="flex flex-row">
           {dataKeys.map((category) => {
