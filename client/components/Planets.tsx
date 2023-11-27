@@ -39,7 +39,7 @@ export function Planets() {
           ) => {
             const planetId = p.url.slice(30).split('/')[0]
             return (
-              <ul key={idx} className="pl-1 hover:text-primary-yellow">
+              <ul key={idx} className="pl-1 hover:underline">
                 <li>
                   <Link to={planetId}>{p.name}</Link>
                 </li>

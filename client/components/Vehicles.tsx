@@ -37,7 +37,7 @@ export function Vehicles() {
               console.log('ID: ', vehiclesId)
             }
             return (
-              <ul key={idx} className="pl-1 hover:text-primary-yellow">
+              <ul key={idx} className="pl-1 hover:underline">
                 <li>
                   <Link to={vehiclesId}>{p.name}</Link>
                 </li>
