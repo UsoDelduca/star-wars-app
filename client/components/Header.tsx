@@ -31,7 +31,7 @@ export function Header() {
                   <li key={category} className="list-none">
                     <Link
                       to={category}
-                      className="mr-0.5 inline-block border-1 border-t border-r rounded-t py-2 px-4 hover:text-[white] font-semibold"
+                      className="mr-0.5 inline-block border-1 border-t border-r rounded-t py-2 px-4 hover:text-[white]"
                     >
                       {category.toUpperCase()}
                     </Link>
