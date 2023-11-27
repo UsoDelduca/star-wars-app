@@ -10,8 +10,8 @@ function App() {
     h-screen
     bg-gradient-to-r
     from-[#0c0a09]
-    via-[#dbd7fb]
-    to-[black]
+    via-[black]
+    to-[#dbd7fb]
     background-animate"
       >
         <Header />
