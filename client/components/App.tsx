@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <div
-        className="text-primary-yellow w-full
+        className="text-primary-yellow font-8bit w-full
     h-screen
     bg-gradient-to-r
     from-[#0c0a09]

@@ -9,7 +9,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        '8bit': ['Montserrat', 'sans-serif'],
+        '8bit': ['"Press Start 2P"', 'cursive'],
       },
     },
   },
