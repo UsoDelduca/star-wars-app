@@ -32,7 +32,7 @@ export function Person() {
           <p>Their skin is {person.skin_color}</p>
           <p>Their weight is {person.mass} kg</p>
           <p>
-            {person.name}&rsquo;s homeworld is {person.homeworld}
+            {person.name}&rsquo;s homeworld is called {person.homeworld}
           </p>
         </div>
       </>
