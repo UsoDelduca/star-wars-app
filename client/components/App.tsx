@@ -12,7 +12,7 @@ function App() {
     from-[#0c0a09]
     via-[black]
     to-[#dbd7fb]
-    background-animate"
+    "
       >
         <Header />
         <Outlet />
