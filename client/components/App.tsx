@@ -8,10 +8,8 @@ function App() {
       <div
         className="text-primary-yellow font-8bit w-full
     h-screen
-    bg-gradient-to-r
-    from-[#0c0a09]
-    via-[black]
-    to-[#dbd7fb]
+    bg-[black]
+    
     "
       >
         <Header />
