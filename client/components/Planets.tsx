@@ -4,9 +4,15 @@ import request from 'superagent'
 import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 const swURL = 'https://swapi.dev/api/planets/'
-
+interface Planet {
+  results: []
+  title: string
+  url: string
+  next: string
+  previous: string
+}
 export function Planets() {
-  const [planets, setPlanets] = useState<any>()
+  const [planets, setPlanets] = useState<Planet>()
   //TODO create an apiClient file with all get functions to improve reusability
   async function getplanets(swURL: string) {
     const res = await request.get(swURL)

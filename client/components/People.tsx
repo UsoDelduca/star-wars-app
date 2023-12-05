@@ -4,9 +4,15 @@ import request from 'superagent'
 import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 const swURL = 'https://swapi.dev/api/people/'
-
+interface Person {
+  results: []
+  title: string
+  url: string
+  next: string
+  previous: string
+}
 export function People() {
-  const [people, setPeople] = useState<any>()
+  const [people, setPeople] = useState<Person>()
   //TODO create an apiClient file with all get functions to improve reusability
   async function getPeople(swURL: string) {
     const res = await request.get(swURL)

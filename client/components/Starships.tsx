@@ -4,9 +4,15 @@ import request from 'superagent'
 import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 const swURL = 'https://swapi.dev/api/starships/'
-
+interface Starship {
+  results: []
+  name: string
+  url: string
+  next: string
+  previous: string
+}
 export function Starships() {
-  const [starships, setStarships] = useState<any>()
+  const [starships, setStarships] = useState<Starship>()
   //TODO create an apiClient file with all get functions to improve reusability
   async function getStarships(swURL: string) {
     const res = await request.get(swURL)

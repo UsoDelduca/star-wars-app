@@ -4,9 +4,16 @@ import request from 'superagent'
 import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 const swURL = 'https://swapi.dev/api/films/'
-
+interface Film {
+  results: []
+  title: string
+  url: string
+  release_date: string
+  next: string
+  previous: string
+}
 export function Films() {
-  const [films, setFilms] = useState<any>()
+  const [films, setFilms] = useState<Film>()
 
   //TODO create an apiClient file with all get functions to improve reusability
   async function getFilms(swURL: string) {
