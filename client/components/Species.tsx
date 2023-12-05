@@ -4,10 +4,16 @@ import request from 'superagent'
 import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 const swURL = 'https://swapi.dev/api/species/'
-
+interface Specie {
+  results: []
+  title: string
+  url: string
+  next: string
+  previous: string
+}
 export function Species() {
-  const [species, setSpecies] = useState<any>()
-
+  const [species, setSpecies] = useState<Specie>()
+  //TODO create an apiClient file with all get functions to improve reusability
   async function getSpecies(swURL: string) {
     const res = await request.get(swURL)
     setSpecies(res.body)
@@ -18,7 +24,6 @@ export function Species() {
 
   if (species) {
     const speciesResult = species.results
-    console.log('SPECIES: ', speciesResult)
 
     return (
       <>
@@ -33,9 +38,7 @@ export function Species() {
             idx: number
           ) => {
             const speciesId = p.url.slice(30).split('/')[0]
-            {
-              console.log('ID: ', speciesId)
-            }
+
             return (
               <ul key={idx} className="pl-1 hover:underline">
                 <li>
@@ -64,7 +67,7 @@ export function Species() {
             >
               Next
             </button>
-            //add number of pages based on the amount of content //
+            //TODO add number of pages based on the amount of content //
           )}
         </div>
       </>

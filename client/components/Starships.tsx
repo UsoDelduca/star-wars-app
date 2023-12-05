@@ -4,10 +4,16 @@ import request from 'superagent'
 import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 const swURL = 'https://swapi.dev/api/starships/'
-
+interface Starship {
+  results: []
+  name: string
+  url: string
+  next: string
+  previous: string
+}
 export function Starships() {
-  const [starships, setStarships] = useState<any>()
-
+  const [starships, setStarships] = useState<Starship>()
+  //TODO create an apiClient file with all get functions to improve reusability
   async function getStarships(swURL: string) {
     const res = await request.get(swURL)
     setStarships(res.body)
@@ -18,13 +24,11 @@ export function Starships() {
 
   if (starships) {
     const starshipsResult = starships.results
-    console.log('SPECIES: ', starshipsResult)
 
     return (
       <>
         <p className="pl-1 pb-1">
-          {' '}
-          The API list may have been altered, so the ID looks a little odd..{' '}
+          The API list may have been altered, so the ID looks a little odd...
         </p>
         {starshipsResult.map(
           (
@@ -37,9 +41,7 @@ export function Starships() {
             idx: number
           ) => {
             const starshipsId = p.url.slice(32).split('/')[0]
-            {
-              console.log('ID: ', starshipsId)
-            }
+
             return (
               <ul key={idx} className="pl-1 hover:underline">
                 <li>
@@ -68,7 +70,7 @@ export function Starships() {
             >
               Next
             </button>
-            //add number of pages based on the amount of content //
+            //TODO add number of pages based on the amount of content //
           )}
         </div>
       </>

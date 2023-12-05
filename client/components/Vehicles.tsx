@@ -4,10 +4,16 @@ import request from 'superagent'
 import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 const swURL = 'https://swapi.dev/api/vehicles/'
-
+interface Vehicle {
+  results: []
+  name: string
+  url: string
+  next: string
+  previous: string
+}
 export function Vehicles() {
-  const [vehicles, setVehicles] = useState<any>()
-
+  const [vehicles, setVehicles] = useState<Vehicle>()
+  //TODO create an apiClient file with all get functions to improve reusability
   async function getVehicles(swURL: string) {
     const res = await request.get(swURL)
     setVehicles(res.body)
@@ -18,13 +24,11 @@ export function Vehicles() {
 
   if (vehicles) {
     const vehiclesResult = vehicles.results
-    console.log('VEHICLES: ', vehiclesResult)
 
     return (
       <>
         <p className="pl-1 pb-1">
-          {' '}
-          The API list may have been altered, so the ID looks a little odd..{' '}
+          The API list may have been altered, so the ID looks a little odd...
         </p>
         {vehiclesResult.map(
           (
@@ -37,9 +41,7 @@ export function Vehicles() {
             idx: number
           ) => {
             const vehiclesId = p.url.slice(31).split('/')[0]
-            {
-              console.log('ID: ', vehiclesId)
-            }
+
             return (
               <ul key={idx} className="pl-1 hover:underline">
                 <li>
@@ -68,7 +70,7 @@ export function Vehicles() {
             >
               Next
             </button>
-            //add number of pages based on the amount of content //
+            //TODO add number of pages based on the amount of content //
           )}
         </div>
       </>

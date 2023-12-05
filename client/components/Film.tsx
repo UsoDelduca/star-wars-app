@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import request from 'superagent'
+import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 const swURL = 'https://swapi.dev/api/films/'
 
@@ -9,15 +10,26 @@ export function Film() {
   const params = Number(useParams().id)
 
   async function getFilm(swURL: string, id: number) {
-    const res = await request.get(`${swURL}${id}`)
-    setFilm(res.body)
+    try {
+      const res = await request.get(`${swURL}${id}`)
+      setFilm(res.body)
+    } catch (error) {
+      console.error('Error fetching film:', error)
+    }
   }
   useEffect(() => {
     getFilm(swURL, params)
   }, [])
 
-  console.log(film)
-
+  if (!film) {
+    return (
+      <>
+        <p className="bg-white opacity-80 pl-1 w-fit">
+          <LoadingSpinner />
+        </p>
+      </>
+    )
+  }
   if (film) {
     return (
       <>

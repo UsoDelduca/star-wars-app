@@ -4,10 +4,18 @@ import request from 'superagent'
 import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 const swURL = 'https://swapi.dev/api/films/'
-
+interface Film {
+  results: []
+  title: string
+  url: string
+  release_date: string
+  next: string
+  previous: string
+}
 export function Films() {
-  const [films, setFilms] = useState<any>()
+  const [films, setFilms] = useState<Film>()
 
+  //TODO create an apiClient file with all get functions to improve reusability
   async function getFilms(swURL: string) {
     const res = await request.get(swURL)
     setFilms(res.body)
@@ -18,7 +26,6 @@ export function Films() {
 
   if (films) {
     const filmsResult = films.results
-    console.log('FILMS: ', filmsResult)
 
     return (
       <>
@@ -34,9 +41,7 @@ export function Films() {
           ) => {
             const filmsId = p.url.slice(28).split('/')[0]
             const releasedYear = p.release_date.substring(0, 4)
-            {
-              console.log('YEAR: ', releasedYear)
-            }
+
             return (
               <ul key={idx} className="pl-1  hover:underline">
                 <li>
@@ -65,7 +70,6 @@ export function Films() {
             >
               Next
             </button>
-            //add number of pages based on the amount of content //
           )}
         </div>
       </>

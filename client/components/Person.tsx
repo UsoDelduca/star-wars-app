@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import request from 'superagent'
+import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 const swURL = 'https://swapi.dev/api/people/'
 
@@ -9,15 +10,26 @@ export function Person() {
   const params = Number(useParams().id)
 
   async function getPerson(swURL: string, id: number) {
-    const res = await request.get(`${swURL}${id}`)
-    SetPerson(res.body)
+    try {
+      const res = await request.get(`${swURL}${id}`)
+      SetPerson(res.body)
+    } catch (error) {
+      console.error('Error fetching person:', error)
+    }
   }
   useEffect(() => {
     getPerson(swURL, params)
   }, [])
 
-  console.log(person)
-
+  if (!person) {
+    return (
+      <>
+        <p className="bg-white opacity-80 pl-1 w-fit">
+          <LoadingSpinner />
+        </p>
+      </>
+    )
+  }
   if (person) {
     return (
       <>

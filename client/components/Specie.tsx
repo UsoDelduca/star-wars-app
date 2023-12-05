@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import request from 'superagent'
+import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 const swURL = 'https://swapi.dev/api/species/'
 
@@ -9,15 +10,26 @@ export function Specie() {
   const params = Number(useParams().id)
 
   async function getSpecie(swURL: string, id: number) {
-    const res = await request.get(`${swURL}${id}`)
-    setSpecie(res.body)
+    try {
+      const res = await request.get(`${swURL}${id}`)
+      setSpecie(res.body)
+    } catch (error) {
+      console.error('Error fetching specie:', error)
+    }
   }
   useEffect(() => {
     getSpecie(swURL, params)
   }, [])
 
-  console.log(specie)
-
+  if (!specie) {
+    return (
+      <>
+        <p className="bg-white opacity-80 pl-1 w-fit">
+          <LoadingSpinner />
+        </p>
+      </>
+    )
+  }
   if (specie) {
     if (specie.name === 'Droid') {
       return (

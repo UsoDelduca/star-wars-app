@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import request from 'superagent'
+import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 const swURL = 'https://swapi.dev/api/planets/'
 
@@ -9,15 +10,26 @@ export function Planet() {
   const params = Number(useParams().id)
 
   async function getPlanet(swURL: string, id: number) {
-    const res = await request.get(`${swURL}${id}`)
-    setPlanet(res.body)
+    try {
+      const res = await request.get(`${swURL}${id}`)
+      setPlanet(res.body)
+    } catch (error) {
+      console.error('Error fetching planet:', error)
+    }
   }
   useEffect(() => {
     getPlanet(swURL, params)
   }, [])
 
-  console.log(planet)
-
+  if (!planet) {
+    return (
+      <>
+        <p className="bg-white opacity-80 pl-1 w-fit">
+          <LoadingSpinner />
+        </p>
+      </>
+    )
+  }
   if (planet) {
     return (
       <>

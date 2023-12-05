@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import request from 'superagent'
+import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 const swURL = 'https://swapi.dev/api/starships/'
 
@@ -9,15 +10,26 @@ export function Starship() {
   const params = Number(useParams().id)
 
   async function getStarship(swURL: string, id: number) {
-    const res = await request.get(`${swURL}${id}`)
-    setStarship(res.body)
+    try {
+      const res = await request.get(`${swURL}${id}`)
+      setStarship(res.body)
+    } catch (error) {
+      console.error('Error fetching starship:', error)
+    }
   }
   useEffect(() => {
     getStarship(swURL, params)
   }, [])
 
-  console.log(starship)
-
+  if (!starship) {
+    return (
+      <>
+        <p className="bg-white opacity-80 pl-1 w-fit">
+          <LoadingSpinner />
+        </p>
+      </>
+    )
+  }
   if (starship) {
     return (
       <>
