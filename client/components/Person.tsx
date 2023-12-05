@@ -21,7 +21,6 @@ export function Person() {
     getPerson(swURL, params)
   }, [])
 
-  console.log(person)
   if (!person) {
     return (
       <>

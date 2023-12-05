@@ -21,7 +21,6 @@ export function Starship() {
     getStarship(swURL, params)
   }, [])
 
-  console.log(starship)
   if (!starship) {
     return (
       <>

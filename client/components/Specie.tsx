@@ -21,7 +21,6 @@ export function Specie() {
     getSpecie(swURL, params)
   }, [])
 
-  console.log(specie)
   if (!specie) {
     return (
       <>

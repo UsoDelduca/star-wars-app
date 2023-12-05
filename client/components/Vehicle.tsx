@@ -21,7 +21,6 @@ export function Vehicle() {
     getVehicle(swURL, params)
   }, [])
 
-  console.log(vehicle)
   if (!vehicle) {
     return (
       <>

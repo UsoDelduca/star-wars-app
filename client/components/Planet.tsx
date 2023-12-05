@@ -21,7 +21,6 @@ export function Planet() {
     getPlanet(swURL, params)
   }, [])
 
-  console.log(planet)
   if (!planet) {
     return (
       <>

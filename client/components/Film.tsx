@@ -21,7 +21,6 @@ export function Film() {
     getFilm(swURL, params)
   }, [])
 
-  console.log(film)
   if (!film) {
     return (
       <>
