@@ -7,7 +7,7 @@ const swURL = 'https://swapi.dev/api/people/'
 
 export function People() {
   const [people, setPeople] = useState<any>()
-
+  //TODO create an apiClient file with all get functions to improve reusability
   async function getPeople(swURL: string) {
     const res = await request.get(swURL)
     setPeople(res.body)

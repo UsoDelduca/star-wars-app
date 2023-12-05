@@ -7,7 +7,7 @@ const swURL = 'https://swapi.dev/api/species/'
 
 export function Species() {
   const [species, setSpecies] = useState<any>()
-
+  //TODO create an apiClient file with all get functions to improve reusability
   async function getSpecies(swURL: string) {
     const res = await request.get(swURL)
     setSpecies(res.body)

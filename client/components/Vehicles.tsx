@@ -7,7 +7,7 @@ const swURL = 'https://swapi.dev/api/vehicles/'
 
 export function Vehicles() {
   const [vehicles, setVehicles] = useState<any>()
-
+  //TODO create an apiClient file with all get functions to improve reusability
   async function getVehicles(swURL: string) {
     const res = await request.get(swURL)
     setVehicles(res.body)
@@ -22,8 +22,7 @@ export function Vehicles() {
     return (
       <>
         <p className="pl-1 pb-1">
-          {' '}
-          The API list may have been altered, so the ID looks a little odd..{' '}
+          The API list may have been altered, so the ID looks a little odd...
         </p>
         {vehiclesResult.map(
           (

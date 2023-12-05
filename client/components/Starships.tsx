@@ -7,7 +7,7 @@ const swURL = 'https://swapi.dev/api/starships/'
 
 export function Starships() {
   const [starships, setStarships] = useState<any>()
-
+  //TODO create an apiClient file with all get functions to improve reusability
   async function getStarships(swURL: string) {
     const res = await request.get(swURL)
     setStarships(res.body)
@@ -22,8 +22,7 @@ export function Starships() {
     return (
       <>
         <p className="pl-1 pb-1">
-          {' '}
-          The API list may have been altered, so the ID looks a little odd..{' '}
+          The API list may have been altered, so the ID looks a little odd...
         </p>
         {starshipsResult.map(
           (

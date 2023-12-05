@@ -8,6 +8,7 @@ const swURL = 'https://swapi.dev/api/films/'
 export function Films() {
   const [films, setFilms] = useState<any>()
 
+  //TODO create an apiClient file with all get functions to improve reusability
   async function getFilms(swURL: string) {
     const res = await request.get(swURL)
     setFilms(res.body)

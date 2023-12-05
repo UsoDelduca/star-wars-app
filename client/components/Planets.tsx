@@ -7,7 +7,7 @@ const swURL = 'https://swapi.dev/api/planets/'
 
 export function Planets() {
   const [planets, setPlanets] = useState<any>()
-
+  //TODO create an apiClient file with all get functions to improve reusability
   async function getplanets(swURL: string) {
     const res = await request.get(swURL)
     setPlanets(res.body)
@@ -18,11 +18,6 @@ export function Planets() {
 
   if (planets) {
     const planetsResult = planets.results
-
-    // const planetId = planetsResult.map((item) => {
-    //   return item.url.slice(30).split('/')[0]
-    // })
-    // console.log('URL: ', planetId)
 
     return (
       <>
