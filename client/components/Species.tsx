@@ -18,7 +18,6 @@ export function Species() {
 
   if (species) {
     const speciesResult = species.results
-    console.log('SPECIES: ', speciesResult)
 
     return (
       <>
@@ -33,9 +32,7 @@ export function Species() {
             idx: number
           ) => {
             const speciesId = p.url.slice(30).split('/')[0]
-            {
-              console.log('ID: ', speciesId)
-            }
+
             return (
               <ul key={idx} className="pl-1 hover:underline">
                 <li>
@@ -64,7 +61,7 @@ export function Species() {
             >
               Next
             </button>
-            //add number of pages based on the amount of content //
+            //TODO add number of pages based on the amount of content //
           )}
         </div>
       </>

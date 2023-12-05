@@ -18,7 +18,6 @@ export function People() {
 
   if (people) {
     const peopleResult = people.results
-    console.log(peopleResult)
 
     return (
       <>
@@ -61,7 +60,7 @@ export function People() {
             >
               Next
             </button>
-            //add number of pages based on the amount of content //
+            //TODO add number of pages based on the amount of content //
           )}
         </div>
       </>

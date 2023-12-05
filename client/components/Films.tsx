@@ -18,7 +18,6 @@ export function Films() {
 
   if (films) {
     const filmsResult = films.results
-    console.log('FILMS: ', filmsResult)
 
     return (
       <>
@@ -34,9 +33,7 @@ export function Films() {
           ) => {
             const filmsId = p.url.slice(28).split('/')[0]
             const releasedYear = p.release_date.substring(0, 4)
-            {
-              console.log('YEAR: ', releasedYear)
-            }
+
             return (
               <ul key={idx} className="pl-1  hover:underline">
                 <li>
@@ -65,7 +62,6 @@ export function Films() {
             >
               Next
             </button>
-            //add number of pages based on the amount of content //
           )}
         </div>
       </>

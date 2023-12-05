@@ -18,7 +18,6 @@ export function Planets() {
 
   if (planets) {
     const planetsResult = planets.results
-    console.log(planetsResult)
 
     // const planetId = planetsResult.map((item) => {
     //   return item.url.slice(30).split('/')[0]

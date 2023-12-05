@@ -18,7 +18,6 @@ export function Vehicles() {
 
   if (vehicles) {
     const vehiclesResult = vehicles.results
-    console.log('VEHICLES: ', vehiclesResult)
 
     return (
       <>
@@ -37,9 +36,7 @@ export function Vehicles() {
             idx: number
           ) => {
             const vehiclesId = p.url.slice(31).split('/')[0]
-            {
-              console.log('ID: ', vehiclesId)
-            }
+
             return (
               <ul key={idx} className="pl-1 hover:underline">
                 <li>
@@ -68,7 +65,7 @@ export function Vehicles() {
             >
               Next
             </button>
-            //add number of pages based on the amount of content //
+            //TODO add number of pages based on the amount of content //
           )}
         </div>
       </>

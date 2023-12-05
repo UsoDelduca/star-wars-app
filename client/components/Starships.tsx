@@ -18,7 +18,6 @@ export function Starships() {
 
   if (starships) {
     const starshipsResult = starships.results
-    console.log('SPECIES: ', starshipsResult)
 
     return (
       <>
@@ -37,9 +36,7 @@ export function Starships() {
             idx: number
           ) => {
             const starshipsId = p.url.slice(32).split('/')[0]
-            {
-              console.log('ID: ', starshipsId)
-            }
+
             return (
               <ul key={idx} className="pl-1 hover:underline">
                 <li>
@@ -68,7 +65,7 @@ export function Starships() {
             >
               Next
             </button>
-            //add number of pages based on the amount of content //
+            //TODO add number of pages based on the amount of content //
           )}
         </div>
       </>
