@@ -10,8 +10,12 @@ export function Starship() {
   const params = Number(useParams().id)
 
   async function getStarship(swURL: string, id: number) {
-    const res = await request.get(`${swURL}${id}`)
-    setStarship(res.body)
+    try {
+      const res = await request.get(`${swURL}${id}`)
+      setStarship(res.body)
+    } catch (error) {
+      console.error('Error fetching starship:', error)
+    }
   }
   useEffect(() => {
     getStarship(swURL, params)

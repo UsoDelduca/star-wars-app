@@ -10,8 +10,12 @@ export function Vehicle() {
   const params = Number(useParams().id)
 
   async function getVehicle(swURL: string, id: number) {
-    const res = await request.get(`${swURL}${id}`)
-    setVehicle(res.body)
+    try {
+      const res = await request.get(`${swURL}${id}`)
+      setVehicle(res.body)
+    } catch (error) {
+      console.error('Error fetching vehicle:', error)
+    }
   }
   useEffect(() => {
     getVehicle(swURL, params)

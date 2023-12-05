@@ -14,7 +14,7 @@ export function Film() {
       const res = await request.get(`${swURL}${id}`)
       setFilm(res.body)
     } catch (error) {
-      console.error('Error fetching vehicle:', error)
+      console.error('Error fetching film:', error)
     }
   }
   useEffect(() => {

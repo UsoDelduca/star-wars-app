@@ -10,8 +10,12 @@ export function Planet() {
   const params = Number(useParams().id)
 
   async function getPlanet(swURL: string, id: number) {
-    const res = await request.get(`${swURL}${id}`)
-    setPlanet(res.body)
+    try {
+      const res = await request.get(`${swURL}${id}`)
+      setPlanet(res.body)
+    } catch (error) {
+      console.error('Error fetching planet:', error)
+    }
   }
   useEffect(() => {
     getPlanet(swURL, params)

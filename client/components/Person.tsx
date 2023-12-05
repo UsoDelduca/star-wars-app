@@ -10,8 +10,12 @@ export function Person() {
   const params = Number(useParams().id)
 
   async function getPerson(swURL: string, id: number) {
-    const res = await request.get(`${swURL}${id}`)
-    SetPerson(res.body)
+    try {
+      const res = await request.get(`${swURL}${id}`)
+      SetPerson(res.body)
+    } catch (error) {
+      console.error('Error fetching person:', error)
+    }
   }
   useEffect(() => {
     getPerson(swURL, params)
