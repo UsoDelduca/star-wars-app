@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import request from 'superagent'
+import LoadingSpinner from '../UI/UX/LoadingSpinner'
 
 const swURL = 'https://swapi.dev/api/species/'
 
@@ -17,7 +18,15 @@ export function Specie() {
   }, [])
 
   console.log(specie)
-
+  if (!specie) {
+    return (
+      <>
+        <p className="bg-white opacity-80 pl-1 w-fit">
+          <LoadingSpinner />
+        </p>
+      </>
+    )
+  }
   if (specie) {
     if (specie.name === 'Droid') {
       return (
